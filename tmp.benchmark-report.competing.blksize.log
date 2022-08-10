@@ -1,0 +1,33 @@
+Benchmark #1: pdu --quantity=blksize tmp.sample
+  Time (mean ± σ):     114.2 ms ±   0.7 ms    [User: 84.7 ms, System: 138.8 ms]
+  Range (min … max):   113.3 ms … 116.5 ms    26 runs
+ 
+Benchmark #2: dust tmp.sample
+  Time (mean ± σ):     148.6 ms ±   2.3 ms    [User: 122.6 ms, System: 149.8 ms]
+  Range (min … max):   146.3 ms … 156.9 ms    20 runs
+ 
+  Warning: Statistical outliers were detected. Consider re-running this benchmark on a quiet PC without any interferences from other programs. It might help to use the '--warmup' or '--prepare' options.
+ 
+Benchmark #3: dua tmp.sample
+  Time (mean ± σ):     248.0 ms ±  13.2 ms    [User: 290.5 ms, System: 200.7 ms]
+  Range (min … max):   228.4 ms … 269.8 ms    12 runs
+ 
+Benchmark #4: ncdu -o /dev/stdout -0 tmp.sample
+  Time (mean ± σ):     192.5 ms ±   0.6 ms    [User: 72.5 ms, System: 119.4 ms]
+  Range (min … max):   192.0 ms … 194.2 ms    15 runs
+ 
+Benchmark #5: gdu --non-interactive --no-progress tmp.sample
+  Time (mean ± σ):     186.3 ms ±   2.6 ms    [User: 187.4 ms, System: 177.1 ms]
+  Range (min … max):   182.0 ms … 191.0 ms    16 runs
+ 
+Benchmark #6: du tmp.sample
+  Time (mean ± σ):     183.5 ms ±   0.4 ms    [User: 62.6 ms, System: 120.3 ms]
+  Range (min … max):   182.9 ms … 184.5 ms    16 runs
+ 
+Summary
+  'pdu --quantity=blksize tmp.sample' ran
+    1.30 ± 0.02 times faster than 'dust tmp.sample'
+    1.61 ± 0.01 times faster than 'du tmp.sample'
+    1.63 ± 0.02 times faster than 'gdu --non-interactive --no-progress tmp.sample'
+    1.69 ± 0.01 times faster than 'ncdu -o /dev/stdout -0 tmp.sample'
+    2.17 ± 0.12 times faster than 'dua tmp.sample'
