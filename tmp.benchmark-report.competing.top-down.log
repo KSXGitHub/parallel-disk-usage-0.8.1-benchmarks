@@ -1,0 +1,11 @@
+Benchmark #1: pdu --top-down tmp.sample
+  Time (mean ± σ):     118.4 ms ±   1.5 ms    [User: 76.3 ms, System: 155.1 ms]
+  Range (min … max):   115.1 ms … 121.3 ms    24 runs
+ 
+Benchmark #2: dust --apparent-size --reverse tmp.sample
+  Time (mean ± σ):     138.4 ms ±   1.9 ms    [User: 106.3 ms, System: 156.6 ms]
+  Range (min … max):   135.9 ms … 143.2 ms    21 runs
+ 
+Summary
+  'pdu --top-down tmp.sample' ran
+    1.17 ± 0.02 times faster than 'dust --apparent-size --reverse tmp.sample'

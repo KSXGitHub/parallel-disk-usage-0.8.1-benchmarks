@@ -1,0 +1,28 @@
+[cols="<,>,>"]
+|===
+| Command | Mean [ms] | Min…Max [ms]
+
+| `pdu --quantity=blksize tmp.sample`
+| 118.9 ± 2.0
+| 116.1…125.3
+
+| `dust tmp.sample`
+| 152.8 ± 2.1
+| 149.8…157.3
+
+| `dua tmp.sample`
+| 264.5 ± 15.0
+| 242.6…294.6
+
+| `ncdu -o /dev/stdout -0 tmp.sample`
+| 198.4 ± 0.4
+| 197.6…199.0
+
+| `gdu --non-interactive --no-progress tmp.sample`
+| 198.8 ± 2.8
+| 193.7…204.1
+
+| `du tmp.sample`
+| 187.5 ± 0.7
+| 186.5…189.3
+|===

@@ -1,0 +1,23 @@
+Benchmark #1: pdu --max-depth=1 tmp.sample
+  Time (mean ± σ):     117.9 ms ±   1.4 ms    [User: 79.5 ms, System: 151.1 ms]
+  Range (min … max):   115.3 ms … 121.4 ms    25 runs
+ 
+Benchmark #2: dutree --summary tmp.sample
+  Time (mean ± σ):     303.0 ms ±   2.9 ms    [User: 92.3 ms, System: 210.0 ms]
+  Range (min … max):   301.4 ms … 310.8 ms    10 runs
+ 
+  Warning: The first benchmarking run for this command was significantly slower than the rest (310.8 ms). This could be caused by (filesystem) caches that were not filled until after the first run. You should consider using the '--warmup' option to fill those caches before the actual benchmark. Alternatively, use the '--prepare' option to clear the caches before each timing run.
+ 
+Benchmark #3: dua --apparent-size tmp.sample
+  Time (mean ± σ):     239.0 ms ±  12.8 ms    [User: 279.0 ms, System: 194.3 ms]
+  Range (min … max):   224.5 ms … 261.9 ms    12 runs
+ 
+Benchmark #4: du --apparent-size --summarize tmp.sample
+  Time (mean ± σ):     181.7 ms ±   0.5 ms    [User: 56.4 ms, System: 124.7 ms]
+  Range (min … max):   180.8 ms … 182.7 ms    16 runs
+ 
+Summary
+  'pdu --max-depth=1 tmp.sample' ran
+    1.54 ± 0.02 times faster than 'du --apparent-size --summarize tmp.sample'
+    2.03 ± 0.11 times faster than 'dua --apparent-size tmp.sample'
+    2.57 ± 0.04 times faster than 'dutree --summary tmp.sample'
